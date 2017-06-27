@@ -53,5 +53,6 @@ RUN mkdir /var/log/kannel/storedmsg
 # Kannel execution
 ## Once Kannel was successfully installed, we execute the following commands in order to
 ## bring it up:
-RUN /usr/local/kannel/sbin/bearerbox -v 0 /etc/kannel/kannel.conf
-RUN /usr/local/kannel/sbin/smsserverbox -v 0 /etc/kannel/kannel.conf
+RUN /usr/local/kannel/sbin/bearerbox -v 0 /etc/kannel/kannel.conf &
+RUN /usr/local/kannel/sbin/smsserverbox -v 0 /etc/kannel/kannel.conf &
+ENTRYPOINT ["/bin/bash"]
